@@ -12,7 +12,7 @@ const useCountdown = (
   const startCountdown = () => {
     setCountDownStatus("running");
     const interval = setInterval(() => {
-      setCountDown((prevState) => prevState - 1000);
+      setCountDown((prevState:any) => prevState - 1000);
     }, 1000);
     setTimeout(() => {
       clearInterval(interval);

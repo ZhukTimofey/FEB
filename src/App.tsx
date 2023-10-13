@@ -2,7 +2,7 @@ import "./index.css";
 import { CardComponent } from "./components/card";
 import { useConsStore, useProsStore } from "./hooks";
 import { addThemes } from "./utils/addTeme.tsx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { generateVotes } from "./utils/voteEvent.ts";
 import {
   Accordion,
@@ -49,15 +49,19 @@ function App() {
       <div className={"flex flex-col mx-auto max-w-4xl text-center"}>
         <Metric className={"my-10"}>Pros and Cons Brainstorming</Metric>
         {countDownStatus === "not started" ? (
-          <>
+          <div className={""}>
             <TextInput
+              placeholder={"Enter theme for brainstorm"}
               value={theme}
+              className={"mb-4 mx-auto w-2/4"}
               onChange={(e) => {
                 setTheme(e.target.value);
               }}
             />
-            <Button onClick={handleStartCountDown}>Start brainstorm</Button>
-          </>
+            <Button className={"mx-auto w-2/4"} onClick={handleStartCountDown}>
+              Start brainstorm
+            </Button>
+          </div>
         ) : (
           <>
             {countDownStatus === "stopped" ? (
@@ -96,7 +100,7 @@ function App() {
               </Grid>
             ) : (
               <>
-                <Metric className={'mb-4'}>{theme}</Metric>
+                <Metric className={"mb-4"}>{theme}</Metric>
                 <Title>Brainstorm will end in:</Title>
                 <Metric className={"mb-10"}>
                   {minutes} : {seconds}

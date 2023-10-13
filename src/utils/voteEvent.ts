@@ -29,15 +29,15 @@ const intervalFunc = (
 
 export const generateVotes = (voteForPros: any, voteForCons: any) => {
   setTimeout(() => {
-    intervalFunc(8, 20000, voteForPros, voteForCons);
+    intervalFunc(12, 20000, voteForPros, voteForCons);
   }, 5000);
   setTimeout(() => {
     intervalFunc(16, 40000, voteForPros, voteForCons);
   }, 25000);
   setTimeout(() => {
-    intervalFunc(32, 80000, voteForPros, voteForCons);
-  }, 45000);
+    intervalFunc(20, 40000, voteForPros, voteForCons);
+  }, 65000);
   setTimeout(() => {
-    intervalFunc(56, 140000, voteForPros, voteForCons);
-  }, 85000);
+    intervalFunc(26, 180000, voteForPros, voteForCons);
+  }, 105000);
 };
